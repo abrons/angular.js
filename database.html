@@ -7,7 +7,7 @@
 </head>
 <body ng-entity="task=Task"
       ng-init="tasks=Task.all();
-      users=['Terron', 'Justin', 'Sam', 'Matt', 'Jeremy', 'Sarah', 'Gabriella', 'Mike'].sort()"
+      users=['Adam', 'Deidre', 'Lily', 'Oscar'].sort()"
       style="display:none;" ng-show="true">
   <div ng-hide="$anchor.task">
     [ <a href="#" ng-action="$anchor.task = '*'">New Task</a> ]
@@ -43,14 +43,6 @@
 
     <label>Description:</label>
     <textarea name="task.description"></textarea>
-
-    <label>Comments:</label>
-    <ul>
-      <li ng-repeat="comment in task.comments">
-        <a href="#" ng-action="task.comments.$remove(comment)">remove</a>
-        <div>{{comment}}</div>
-      </li>
-    </ul>
 
     <label><input type="button" value="Add" ng-action="task.comments.$add(comment); comment=''"></label>
     <div>
